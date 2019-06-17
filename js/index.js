@@ -40,3 +40,39 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let navA = document.querySelectorAll('nav a');
+navA.forEach((element, index) => {
+  element.textContent = siteContent["nav"][`nav-item-${index + 1}`];
+})
+
+navA.forEach((element) => {
+  element.style.color = 'green';
+})
+
+let h1 = document.querySelector('h1');
+h1.textContent = siteContent["cta"]["h1"];
+
+let ctaImg = document.querySelector('#cta-img');
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+ctaImg.setAttribute('alt', 'Image of a code snippet.');
+
+let button = document.querySelector('button');
+button.textContent = siteContent["cta"]["button"];
+
+let middleImg = document.querySelector("#middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+middleImg.setAttribute('alt', 'Image of code snippets across the screen');
+
+// let contentHeaders = document.querySelectorAll('h4');
+// console.log(contentHeaders);
+
+// let textContent = document.querySelectorAll('.text-content p');
+
+let contact = document.querySelectorAll('.contact');
+contact.forEach((element, index) => {
+  element.textContent = siteContent["contact"];
+})
+
+let footer = document.querySelector("footer");
+footer.textContent = siteContent["footer"]["copyright"];
