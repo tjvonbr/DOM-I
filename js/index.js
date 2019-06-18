@@ -46,10 +46,6 @@ navA.forEach((element, index) => {
   element.textContent = siteContent["nav"][`nav-item-${index + 1}`];
 })
 
-navA.forEach((element) => {
-  element.style.color = 'green';
-})
-
 let h1 = document.querySelector('h1');
 h1.textContent = siteContent["cta"]["h1"];
 
@@ -64,15 +60,38 @@ let middleImg = document.querySelector("#middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 middleImg.setAttribute('alt', 'Image of code snippets across the screen');
 
-// let contentHeaders = document.querySelectorAll('h4');
-// console.log(contentHeaders);
+let textContentHeader = document.querySelectorAll('.text-content h4');
+textContentHeader[0].textContent = 'Features';
+textContentHeader[1].textContent = 'About';
+textContentHeader[2].textContent = 'Services';
+textContentHeader[3].textContent = 'Product';
+textContentHeader[4].textContent = 'Vision';
 
-// let textContent = document.querySelectorAll('.text-content p');
-
-let contact = document.querySelectorAll('.contact');
-contact.forEach((element, index) => {
-  element.textContent = siteContent["contact"];
-})
+let textContent = document.querySelectorAll('.text-content p');
+textContent[0].textContent = siteContent['main-content']['features-content'];
+textContent[1].textContent = siteContent['main-content']['about-content'];
+textContent[2].textContent = siteContent['main-content']['services-content'];
+textContent[3].textContent = siteContent['main-content']['product-content'];
+textContent[4].textContent = siteContent['main-content']['vision-content'];
 
 let footer = document.querySelector("footer");
 footer.textContent = siteContent["footer"]["copyright"];
+
+// Creating Child Elements for Nav and Changing Color
+
+const navParent = document.querySelector('nav');
+
+let appendChild1 = document.createElement('a');
+appendChild1.textContent = 'Blog';
+
+let appendChild2 = document.createElement('a');
+appendChild2.textContent = 'Work'
+
+navParent.appendChild(appendChild1);
+navParent.appendChild(appendChild2);
+
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach((element) => {
+  element.style.color = 'green';
+})
